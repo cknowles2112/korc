@@ -83,16 +83,19 @@ findFiles(partDir).map(parseFile).forEach(function (fileParts) {
 			}
 
             //Better taking into account the 0.625 size items
-            if (part.bulkheadProfiles == 'size0') {
-                result.size = 0;
-            }
-            else if (part.bulkheadProfiles == 'size1') {
+            if (typeof (part.bulkheadProfiles) === "undefined") {
                 result.size = 1;
             }
-            else if (part.bulkheadProfiles == 'size2') {
+            else if (part.bulkheadProfiles.toString().includes("size0")) {
+                result.size = 0;
+            }
+            else if (part.bulkheadProfiles.toString().includes("size1")) {
+                result.size = 1;
+            }
+            else if (part.bulkheadProfiles.toString().includes("size2")) {
                 result.size = 2;
             }
-            else if (part.bulkheadProfiles == 'size3') {
+            else if (part.bulkheadProfiles.toString().includes("size3")) {
                 result.size = 3;
             }
             else {
