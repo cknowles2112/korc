@@ -81,13 +81,24 @@ findFiles(partDir).map(parseFile).forEach(function (fileParts) {
 					radial = true;
 				}
 			}
-			
-			if (part.node_stack_top || part.node_stack_bottom || part.node_attach) {
-				var node_stack = (part.node_stack_top || part.node_stack_bottom || part.node_attach)[0].split(/\s*,\s*/);
-				result.size = parseFloat(node_stack[6]);
-				if (isNaN(result.size)) result.size = (radial ? -1 : 1);  //WATCH: Seems to be a safe assumption
-			}
-			
+
+            //Better taking into account the 0.625 size items
+            if (part.bulkheadProfiles == 'size0') {
+                result.size = 0;
+            }
+            else if (part.bulkheadProfiles == 'size1') {
+                result.size = 1;
+            }
+            else if (part.bulkheadProfiles == 'size2') {
+                result.size = 2;
+            }
+            else if (part.bulkheadProfiles == 'size3') {
+                result.size = 3;
+            }
+            else {
+                result.size = 1;
+            }
+            
 			//LF/O Engine properties
 			var moduleEngines = jsonPath(part, "$.MODULE[?(@.name[-1:]=='ModuleEngines'||@.name[-1:]=='ModuleEnginesFX'&&@.PROPELLANT[*].name[-1:]=='Oxidizer'||@.PROPELLANT[*].name[-1:]=='SolidFuel')]");
 			if (moduleEngines) {
