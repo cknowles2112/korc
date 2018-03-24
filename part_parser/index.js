@@ -235,16 +235,16 @@ function partFilterByType(type, part) {
 }
 
 function prettyPrint(parts) {
-	return JSON.stringify(parts.sort(partSort)).replace(/"(TYPES\.[A-Z_]+)"/g, "$1").replace(/\},\{/g, "},\n{");
+	return JSON.stringify(parts.sort(partSort)).replace(/"(TYPES\.[A-Z_]+)"/g, "$1").replace(/\},\{/g, "},\n{").replace(/\[/g, "").replace(/\]/g, "");
 }
 
-console.log("LF/O Engines:");
-console.log(prettyPrint(results.filter(partFilterByType.bind(this,"TYPES.LFO_ENGINE"))));
-console.log("LF/O Tanks:");
-console.log(prettyPrint(results.filter(partFilterByType.bind(this,"TYPES.LFO_TANK"))));
-console.log("Boosters:");
-console.log(prettyPrint(results.filter(partFilterByType.bind(this,"TYPES.BOOSTER"))));
-console.log("Decouplers:");
-console.log(prettyPrint(results.filter(partFilterByType.bind(this,"TYPES.DECOUPLER"))));
-console.log("Branches:");
+console.log("//LF/O Engines:");
+console.log(prettyPrint(results.filter(partFilterByType.bind(this,"TYPES.LFO_ENGINE"))).concat(","));
+console.log("//LF/O Tanks:");
+console.log(prettyPrint(results.filter(partFilterByType.bind(this,"TYPES.LFO_TANK"))).concat(","));
+console.log("//Boosters:");
+console.log(prettyPrint(results.filter(partFilterByType.bind(this,"TYPES.BOOSTER"))).concat(","));
+console.log("//Decouplers:");
+console.log(prettyPrint(results.filter(partFilterByType.bind(this,"TYPES.DECOUPLER"))).concat(","));
+console.log("//Branches:");
 console.log(prettyPrint(results.filter(partFilterByType.bind(this,"TYPES.BRANCH"))));
