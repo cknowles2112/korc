@@ -219,7 +219,7 @@ findFiles(partDir).map(parseFile).forEach(function (fileParts) {
 			}
 			
 			//Remove useless parts
-			if (result.name === "Launch Escape System" || /Mk[123] |C7 Brand|Service Bay/.test(result.name)) result.type = "TYPES.UNKNOWN";
+			if (result.name === "Launch Escape System" || /Mk[123] |C7 Brand|Service Bay|Heat Shield|Pylon|Hardpoint/.test(result.name)) result.type = "TYPES.UNKNOWN";
 			
 			results.push(result);
 		});
