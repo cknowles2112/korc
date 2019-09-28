@@ -67,7 +67,7 @@ var TYPE_NAMES_PLURAL = {
 
 var PACKS = [
 	{
-		name:"Stock 1.3.1",
+		name:"Stock 1.7.2",
 		parts:[
             //LF/O Engines:
             {"name":"S3 KS-25x4 \"Mammoth\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":3,"cost":39000,"mass":15,"thrust_min":0,"thrust_max":4000,"throttleable":true,"isp_vac":315,"isp_atm":295,"thrust_atm":3746.031746031746,"thrust_vac":4000,"gimbal":2,"last":true},
@@ -75,6 +75,7 @@ var PACKS = [
             {"name":"RE-M3 \"Mainsail\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":2,"cost":13000,"mass":6,"thrust_min":0,"thrust_max":1500,"throttleable":true,"isp_vac":310,"isp_atm":285,"thrust_atm":1379.032258064516,"thrust_vac":1500,"gimbal":2},
             {"name":"RE-I5 \"Skipper\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":2,"cost":5300,"mass":3,"thrust_min":0,"thrust_max":650,"throttleable":true,"isp_vac":320,"isp_atm":280,"thrust_atm":568.75,"thrust_vac":650,"gimbal":2},
             {"name":"RE-L10 \"Poodle\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":2,"cost":1300,"mass":1.75,"thrust_min":0,"thrust_max":250,"throttleable":true,"isp_vac":350,"isp_atm":90,"thrust_atm":64.28571428571429,"thrust_vac":250,"gimbal":4.5},
+            {"name":"RE-L10 \"Poodle\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":2,"cost":1300,"mass":1.75,"thrust_min":0,"thrust_max":250,"throttleable":true,"isp_vac":350,"isp_atm":90,"thrust_atm":64.28571428571429,"thrust_vac":250,"gimbal":5},
             {"name":"S3 KS-25 \"Vector\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":1,"cost":18000,"mass":4,"thrust_min":0,"thrust_max":1000,"throttleable":true,"isp_vac":315,"isp_atm":295,"thrust_atm":936.5079365079365,"thrust_vac":1000,"gimbal":10.5},
             {"name":"CR-7 R.A.P.I.E.R. Engine","type":TYPES.LFO_ENGINE,"size":1,"cost":6000,"mass":2,"thrust_min":0,"thrust_max":180,"throttleable":true,"isp_vac":305,"isp_atm":275,"thrust_atm":162.29508196721312,"thrust_vac":180,"gimbal":3},
             {"name":"LV-T45 \"Swivel\" Liquid Fuel Engine","type":TYPES.LFO_ENGINE,"size":1,"cost":1200,"mass":1.5,"thrust_min":0,"thrust_max":215,"throttleable":true,"isp_vac":320,"isp_atm":250,"thrust_atm":167.96875,"thrust_vac":215,"gimbal":3},
@@ -92,14 +93,17 @@ var PACKS = [
             {"name":"Kerbodyne S3-3600 Tank","type":TYPES.LFO_TANK,"size":3,"cost":3250,"mass":2.25,"mass_fuel":18},
             {"name":"Rockomax Jumbo-64 Fuel Tank","type":TYPES.LFO_TANK,"size":2,"cost":5750,"mass":4,"mass_fuel":32},
             {"name":"Rockomax X200-32 Fuel Tank","type":TYPES.LFO_TANK,"size":2,"cost":3000,"mass":2,"mass_fuel":16},
+            {"name":"Kerbodyne ADTP-2-3","type":TYPES.LFO_TANK,"size":2,"cost":1623,"mass":1.875,"mass_fuel":15},
             {"name":"Rockomax X200-16 Fuel Tank","type":TYPES.LFO_TANK,"size":2,"cost":1550,"mass":1,"mass_fuel":8},
             {"name":"Rockomax X200-8 Fuel Tank","type":TYPES.LFO_TANK,"size":2,"cost":800,"mass":0.5,"mass_fuel":4},
             {"name":"FL-T800 Fuel Tank","type":TYPES.LFO_TANK,"size":1,"cost":800,"mass":0.5,"mass_fuel":4},
             {"name":"FL-T400 Fuel Tank","type":TYPES.LFO_TANK,"size":1,"cost":500,"mass":0.25,"mass_fuel":2},
             {"name":"FL-T200 Fuel Tank","type":TYPES.LFO_TANK,"size":1,"cost":275,"mass":0.125,"mass_fuel":1},
             {"name":"FL-T100 Fuel Tank","type":TYPES.LFO_TANK,"size":1,"cost":150,"mass":0.0625,"mass_fuel":0.5},
-            {"name":"ROUND-8 Toroidal Fuel Tank","type":TYPES.LFO_TANK,"size":1,"cost":175,"mass":0.0375,"mass_fuel":0.30000000000000004},
+            {"name":"R-12 'Doughnut' External Tank","type":TYPES.LFO_TANK,"size":1,"cost":147,"mass":0.0375,"mass_fuel":0.30000000000000004},
             {"name":"Oscar-B Fuel Tank","type":TYPES.LFO_TANK,"size":0,"cost":70,"mass":0.025,"mass_fuel":0.2},
+            {"name":"R-11 'Baguette' External Tank","type":TYPES.LFO_TANK,"size":-1,"cost":50,"mass":0.03375,"mass_fuel":0.27,"last":true,"radial":true},
+            {"name":"R-4 'Dumpling' External Tank","type":TYPES.LFO_TANK,"size":-1,"cost":50,"mass":0.01375,"mass_fuel":0.11,"last":true,"radial":true},
             //Boosters:
             {"name":"LFB KR-1x2 \"Twin-Boar\" Liquid Fuel Engine","type":TYPES.BOOSTER,"size":2,"cost":17000,"mass":10.5,"thrust_min":0,"thrust_max":2000,"throttleable":true,"isp_vac":300,"isp_atm":280,"thrust_atm":1866.6666666666667,"thrust_vac":2000,"gimbal":1.5,"mass_fuel":32,"last":true},
             {"name":"S1 SRB-KD25k \"Kickback\" Solid Fuel Booster","type":TYPES.BOOSTER,"size":1,"cost":2700,"mass":4.5,"thrust_min":0,"thrust_max":670,"throttleable":false,"isp_vac":220,"isp_atm":195,"thrust_atm":593.8636363636364,"thrust_vac":670,"mass_fuel":19.5},
@@ -109,27 +113,28 @@ var PACKS = [
             {"name":"Sepratron I","type":TYPES.BOOSTER,"size":-1,"cost":75,"mass":0.0125,"thrust_min":0,"thrust_max":18,"throttleable":false,"isp_vac":154,"isp_atm":118,"thrust_atm":13.792207792207792,"thrust_vac":18,"mass_fuel":0.06,"last":true,"radial":true},
             //Decouplers:
             {"name":"Heat Shield (3.75m)","type":TYPES.DECOUPLER,"size":3,"cost":1100,"mass":1,"ejection_force":100},
-            {"name":"TR-38-D","type":TYPES.DECOUPLER,"size":3,"cost":600,"mass":0.8,"ejection_force":100},
+            {"name":"TS-37 Stack Separator","type":TYPES.DECOUPLER,"size":3,"cost":900,"mass":0.48,"ejection_force":200},
+            {"name":"TD-37 Decoupler","type":TYPES.DECOUPLER,"size":3,"cost":600,"mass":0.36,"ejection_force":200},
             {"name":"Heat Shield (10m)","type":TYPES.DECOUPLER,"size":2,"cost":2400,"mass":1.5,"ejection_force":100},
             {"name":"Heat Shield (2.5m)","type":TYPES.DECOUPLER,"size":2,"cost":600,"mass":0.5,"ejection_force":100},
-            {"name":"TR-XL Stack Separator","type":TYPES.DECOUPLER,"size":2,"cost":900,"mass":0.45,"ejection_force":600},
-            {"name":"Rockomax Brand Decoupler","type":TYPES.DECOUPLER,"size":2,"cost":550,"mass":0.4,"ejection_force":250},
+            {"name":"TS-25 Stack Separator","type":TYPES.DECOUPLER,"size":2,"cost":775,"mass":0.21,"ejection_force":150},
+            {"name":"TD-25 Decoupler","type":TYPES.DECOUPLER,"size":2,"cost":550,"mass":0.16,"ejection_force":150},
             {"name":"Heat Shield (1.25m)","type":TYPES.DECOUPLER,"size":1,"cost":300,"mass":0.1,"ejection_force":100},
-            {"name":"TR-18D Stack Separator","type":TYPES.DECOUPLER,"size":1,"cost":600,"mass":0.075,"ejection_force":250},
-            {"name":"TR-18A Stack Decoupler","type":TYPES.DECOUPLER,"size":1,"cost":400,"mass":0.05,"ejection_force":250},
+            {"name":"TS-12 Stack Separator","type":TYPES.DECOUPLER,"size":1,"cost":600,"mass":0.05,"ejection_force":100},
+            {"name":"TD-12 Decoupler","type":TYPES.DECOUPLER,"size":1,"cost":400,"mass":0.04,"ejection_force":100},
             {"name":"Heat Shield (0.625m)","type":TYPES.DECOUPLER,"size":0,"cost":150,"mass":0.025,"ejection_force":50},
-            {"name":"TR-2C Stack Separator","type":TYPES.DECOUPLER,"size":0,"cost":450,"mass":0.02,"ejection_force":15},
-            {"name":"TR-2V Stack Decoupler","type":TYPES.DECOUPLER,"size":0,"cost":300,"mass":0.015,"ejection_force":15},
+            {"name":"TD-06 Decoupler","type":TYPES.DECOUPLER,"size":0,"cost":300,"mass":0.01,"ejection_force":50},
+            {"name":"TS-06 Stack Separator","type":TYPES.DECOUPLER,"size":0,"cost":450,"mass":0.01,"ejection_force":50},
             {"name":"Hydraulic Detachment Manifold","type":TYPES.DECOUPLER,"size":-1,"cost":770,"mass":0.4,"ejection_force":450,"last":true,"radial":true},
             {"name":"Structural Pylon","type":TYPES.DECOUPLER,"size":-1,"cost":125,"mass":0.2,"ejection_force":250,"last":true,"radial":true},
-            {"name":"TT-70 Radial Decoupler","type":TYPES.DECOUPLER,"size":-1,"cost":700,"mass":0.05,"ejection_force":260,"last":true,"radial":true},
             {"name":"Small Hardpoint","type":TYPES.DECOUPLER,"size":-1,"cost":60,"mass":0.05,"ejection_force":60,"last":true,"radial":true},
+            {"name":"TT-70 Radial Decoupler","type":TYPES.DECOUPLER,"size":-1,"cost":700,"mass":0.05,"ejection_force":260,"last":true,"radial":true},
             {"name":"TT-38K Radial Decoupler","type":TYPES.DECOUPLER,"size":-1,"cost":600,"mass":0.025,"ejection_force":250,"last":true,"radial":true},
             //Branches:
             {"name":"TVR-400L Stack Quad-Adapter","type":TYPES.BRANCH,"size":1,"cost":800,"mass":0.2,"sizeA":1,"sizeB":1,"multiplier":4},
             {"name":"TVR-300L Stack Tri-Adapter","type":TYPES.BRANCH,"size":1,"cost":600,"mass":0.15,"sizeA":1,"sizeB":1,"multiplier":3},
             {"name":"TVR-200L Stack Bi-Adapter","type":TYPES.BRANCH,"size":1,"cost":400,"mass":0.1,"sizeA":1,"sizeB":1,"multiplier":2},
-            {"name":"TVR-200 Stack Bi-Coupler","type":TYPES.BRANCH,"size":1,"cost":400,"mass":0.1,"sizeA":1,"sizeB":1,"multiplier":2}
+            {"name":"TVR-200 Stack Bi-Coupler","type":TYPES.BRANCH,"size":1,"cost":400,"mass":0.1,"sizeA":1,"sizeB":1,"multiplier":2},
 		]
 	}
 ];
