@@ -32,7 +32,9 @@ function findFiles(path) {
 		if (fs.statSync(file).isDirectory()) {
 			files = files.concat(findFiles(file));
 		} else if (file.slice(-4) === ".cfg") {
-			files.push(file);
+			if (file.indexOf("zDepre") == -1) {
+				files.push(file);
+			}
 		}
 	}
 	return files;
