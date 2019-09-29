@@ -32,29 +32,17 @@ If you are getting wildly different numbers in Kerbal Engineer, it's likely that
 
 ## Roadmap
 
-* Support parallel staging (all stages fire at same time)
-* Add option for adding size adapters
-* Serialize and output arguments used (for debugging)
-* Output stats of parts in the parts list (for debugging)
-* Add parts from other mods
-* Support per stage settings
-* Quickly toggle parts by size or science node
-* Optimize by X per Delta-V
-* Restrict SRBs to the first stage(s)
+Continue to update with parts changes for KSP 1 - I plan to add no new features at this time.
 
 ## Support This Project
 
-Find this tool useful? Like to see it continually supported?
-
-I am a self-employed software developer who built this in my free time. 
-Unfortunately, I can't work on stuff like this all the time as I have to make money to eat and live. 
-With your support, I can continue working on this and other great tools for Kerbal Space Program that everyone can benefit from!
-
-Please click the "Donate" link on the web app to support this project! Thanks!
+Original project by Gary Court - [KORC](https://github.com/garycourt/korc) 
+Mine is a fork to keep up to date with more modern KSP 1 parts.  
 
 ## License
 
-Copyright (c) 2013, Gary Court
+Copyright (c) 2013, Gary Court - original project 
+Copyright (c) 2018, Chris Knowles - for parser changes and new parts
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
