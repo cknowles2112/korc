@@ -30,6 +30,15 @@ Be aware that this program runs locally in your web browser, and will max out yo
 
 If you are getting wildly different numbers in Kerbal Engineer, it's likely that you've enabled Atmospheric Stats in one tool and not the other. Or else you've messed up your staging.
 
+## Updating Parts lists
+
+```
+cd part_parser
+node index.js <Kerbal GameData Dir>
+```
+
+This will output the list - copy and past this into the kspcalc.js in the root directory overwriting the other parts.
+
 ## Roadmap
 
 Continue to update with parts changes for KSP 1 - I plan to add no new features at this time.
